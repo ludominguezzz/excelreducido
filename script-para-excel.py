@@ -1,3 +1,5 @@
+#REDUCCION de matrices a 60x60
+
 import numpy as np
 import os
 
@@ -24,3 +26,12 @@ for file in fechas:
 #datos_df = todf(datos)
 #print(datos_df.shape)
 
+
+#CONVERSION de .asc a .csv
+
+from pathlib import Path
+carpeta = Path("C:/Users/Vaio/Documents/Doctorado/ANALISIS DE IMAGENES/405-CH1/CONTROLES/28-11-23")
+for c in list(carpeta.iterdir()):
+    if c.suffix == ".asc":
+        nueva_extension = c.with_suffix(".csv")
+        c.rename(nueva_extension)
